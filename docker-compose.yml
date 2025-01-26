@@ -21,7 +21,7 @@ services:
       - ./package-lock.json:/var/www/package-lock.json
       - ./package.json:/var/www/package.json
       - ./phpunit.xml:/var/www/phpunit.xml
-      - ./postcss.config.js:/var/www/postcss.config.js
+      - ./postcss.config.cjs:/var/www/postcss.config.cjs
       - ./LICENSE:/var/www/LICENSE
 
     user: www-data:www-data
