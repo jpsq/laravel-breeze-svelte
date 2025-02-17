@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\LinkController;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\ItemController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +34,6 @@ require __DIR__ . '/auth.php';
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
-    
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/about', function () {
@@ -42,4 +44,3 @@ Route::get('/about', function () {
 Route::get('/links', [LinkController::class, 'index'])->middleware(['auth', 'verified'])->name('links.index');
 Route::post('/links', [LinkController::class, 'store'])->name('links.store');
 Route::delete('/links/{link}', [LinkController::class, 'destroy'])->name('links.destroy');
-Route::resource('items', ItemController::class);
