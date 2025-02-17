@@ -62,3 +62,26 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### Docker
+
+### Installation using Docker
+
+```
+composer install
+cp .env.example .env
+php artisan key:generate
+.vendor/bin/sail up -d
+.vendor/bin/sail up -d npm i
+.vendor/bin/sail up -d npm run dev
+```
+
+Open `http://localhost/` on your browser.
+
+### Deployment using Docker:
+
+First configure the docker-compose-prod.yml and the .env file.
+
+```
+docker compose -f docker-compose-prod.yml
+```%   
